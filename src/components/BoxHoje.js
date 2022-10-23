@@ -90,7 +90,7 @@ background-color: ${props => props.marcado};
 border: 1px solid #e7e7e7;
 border-radius: 5px;
 margin-left: 35px;
-font-size: 65px;
+font-size: 55px;
 display: flex;
 aling-items: center;
 justify-content: center;
