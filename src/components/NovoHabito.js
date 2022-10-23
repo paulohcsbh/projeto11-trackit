@@ -86,6 +86,7 @@ font-size 16px;
 color: #52b6ff;
 cursor: pointer;
 border: transparent;
+background-color: #ffffff;
 `
 const Salvar = styled(Cancelar)`
 width: 84px;
