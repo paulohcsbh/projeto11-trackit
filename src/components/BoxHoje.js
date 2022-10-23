@@ -34,7 +34,7 @@ export default function BoxHoje(props) {
                 <Sequencia>Sequencia atual: <Text verde={today.done === false ? "#666666" : "#8fc549"}> {today.currentSequence} dias</Text></Sequencia>
                 <Recorde>Seu recorde: <Text verde={today.done === false && today.currentSequence === today.highestSequence ? "#666666" : "#8fc549"}> {today.highestSequence} dias</Text></Recorde>
             </ContainerTarefa>
-            <BoxMarcado data-identifier="done-habit-btn" onClick={() => qualClicado(today.id)} marcado={today.done === false ? "#ebebeb" : colorir === false ? "#8fc549" : ""}>✓</BoxMarcado>
+            <BoxMarcado data-identifier="done-habit-btn" onClick={() => qualClicado(today.id)} marcado={today.done === false ? "#ebebeb" : colorir === false ? "#8fc549" : ""}><Check>✓</Check></BoxMarcado>
         </Container>
 
     )
@@ -94,7 +94,11 @@ font-size: 55px;
 display: flex;
 aling-items: center;
 justify-content: center;
+cursor: pointer;
+`
+const Check = styled.p`
+width: 36px;
+height: 28px;
 color: #ffffff;
 cursor: pointer;
-padding-bottom: 30px;
 `
