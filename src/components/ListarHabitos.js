@@ -8,8 +8,10 @@ export default function ListarHabitos(props) {
 
     function deletar(id) {
         if (window.confirm("Deletar hábito?")) {
-            axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, { headers: { "Authorization": `Bearer ${token}` }, })
-            setEstado(Math.random())
+            const del = axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, { headers: { "Authorization": `Bearer ${token}` }, })
+            del.then(() => { setEstado(Math.random()) })
+            del.catch(erro => { console.log(erro.response.data) })
+            
         }
         
     }
