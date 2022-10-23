@@ -9,9 +9,9 @@ export default function ListarHabitos(props) {
     function deletar(id) {
         if (window.confirm("Deletar hábito?")) {
             axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, { headers: { "Authorization": `Bearer ${token}` }, })
-            
+            setEstado(Math.random())
         }
-        setEstado(Math.random())
+        
     }
 
     return (

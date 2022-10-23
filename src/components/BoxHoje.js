@@ -96,5 +96,5 @@ aling-items: center;
 justify-content: center;
 color: #ffffff;
 cursor: pointer;
-padding-bottom: 8px;
+padding-bottom: 30px;
 `
