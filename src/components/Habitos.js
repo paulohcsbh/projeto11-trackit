@@ -43,7 +43,7 @@ export default function Habitos({ token }) {
             <NovoHabito cancel={cancel} setCancel={setCancel} setEstado={setEstado} token={token} />
             {minhasTasks.length === 0 ?
                 <Mensagem data-identifier="no-habit-message">Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</Mensagem> :
-                minhasTasks.map((tarefas) => (<ListarHabitos key={tarefas.id} tarefas={tarefas} setEstado={setEstado} token={token}></ListarHabitos>)
+                minhasTasks.map((tarefas) => (<ListarHabitos key={tarefas.id} tarefas={tarefas} setEstado={setEstado} token={token} ></ListarHabitos>)
                 )}
 
             <Footer />

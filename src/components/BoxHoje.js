@@ -8,16 +8,18 @@ export default function BoxHoje(props) {
 
     function qualClicado(id) {
         if (colorir === true || today.done === false) {
-            setColorir(false)
+            
             const add = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/check`, {}, { headers: { "Authorization": `Bearer ${token}` }, })
+            add.then((a) => {setColorir(false); setEstado(Math.random())})
             add.catch(() => { alert("Erro") })
-            setEstado(Math.random())
+            
 
         } else {
-            setColorir(true)
+           
             const remove = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`, {}, { headers: { "Authorization": `Bearer ${token}` }, })
+            remove.then((a) => {setColorir(true); setEstado(Math.random())})
             remove.catch(() => { alert("Erro") })
-            setEstado(Math.random())
+            
         }
     }
     useEffect(() => {
@@ -61,6 +63,8 @@ font-size: 20px;
 font-family: Lexend Deca;
 border-radius: 5px;
 color: #666666;
+word-wrap: break-word;
+overflow: auto;
 `
 const Sequencia = styled.div`
 font-weight: 400;

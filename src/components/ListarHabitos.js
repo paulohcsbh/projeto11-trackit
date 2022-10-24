@@ -3,13 +3,13 @@ import styled from "styled-components"
 import Lixo from "../assets/img/Vector.png"
 import DiasHabitos from "./DiasHabitos"
 export default function ListarHabitos(props) {
-    const { tarefas, setEstado, token } = props
+    const { tarefas, setEstado, token,setAtualiza } = props
     const lista = ["d", "s", "t", "q", "q", "s", "s"]
 
     function deletar(id) {
         if (window.confirm("Deletar hábito?")) {
             const del = axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, { headers: { "Authorization": `Bearer ${token}` }, })
-            del.then(() => { setEstado(Math.random()) })
+            del.then(() => { setEstado(Math.random()); setAtualiza(Math.random()) })
             del.catch(erro => { console.log(erro.response.data) })
             
         }
@@ -48,6 +48,8 @@ font-family: Lexend Deca;
 border-radius: 5px;
 color: #dbdbdb;
 margin-left: 17px;
+word-wrap: break-word;
+overflow: auto;
 `
 const Apagar = styled.img`
 width: 13px;

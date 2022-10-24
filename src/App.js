@@ -9,13 +9,14 @@ import { useState } from "react";
 
 function App() {
   const [token, setToken] = useState("")
+  
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login setToken={setToken}/>} />
         <Route path="/cadastrar" element={<Cadastrar />} />        
-        <Route path="/habitos" element={<Habitos token={token}/>} />
-        <Route path="/hoje" element={<Hoje token={token}/>} />
+        <Route path="/habitos" element={<Habitos token={token} />} />
+        <Route path="/hoje" element={<Hoje token={token} />} />
         <Route path="/historico" element={<Historico/>}/>
       </Routes>
     </BrowserRouter>
